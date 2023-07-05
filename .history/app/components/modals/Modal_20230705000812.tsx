@@ -67,6 +67,7 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           outline-none 
           focus:outline-none
           bg-neutral-800/70
+          
         "
       >
         <div className="
@@ -80,7 +81,6 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           h-full 
           lg:h-auto
           md:h-auto
-
           "
         >
           {/*content*/}

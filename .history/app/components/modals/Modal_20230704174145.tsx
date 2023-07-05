@@ -1,64 +1,79 @@
-'use client'
+'use client';
 
-import React, { useCallback, useEffect, useState } from 'react'
-import {IoMdClose} from 'react-icons/io'
-import Button from '../Button';
+import { useCallback, useEffect, useState } from "react";
+import { IoMdClose } from "react-icons/io";
 
-interface ModalInterfaceProps {
-isOpen?: boolean;
-disabled?:boolean;
-onSubmit: () => void
-onClose: () => void
-actionLabel:string
-secondaryAction?:() => void
-title?:string
-body?: React.ReactElement
-footer?: React.ReactElement
-secondaryActionLabel?:string
+import Button from "../Button";
+
+interface ModalProps {
+  isOpen?: boolean;
+  onClose: () => void;
+  onSubmit: () => void;
+  title?: string;
+  body?: React.ReactElement;
+  footer?: React.ReactElement;
+  actionLabel: string;
+  disabled?: boolean;
+  secondaryAction?: () => void;
+  secondaryActionLabel?: string;
 }
 
-const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,onClose,actionLabel,body, footer,secondaryActionLabel,secondaryAction}) => {
-
+const Modal: React.FC<ModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  onSubmit, 
+  title, 
+  body, 
+  actionLabel, 
+  footer, 
+  disabled,
+  secondaryAction,
+  secondaryActionLabel
+}) => {
   const [showModal, setShowModal] = useState(isOpen);
 
   useEffect(() => {
-    setShowModal(isOpen)
-  }, [isOpen])
+    setShowModal(isOpen);
+  }, [isOpen]);
 
   const handleClose = useCallback(() => {
-    if(disabled) {
-    return
-  }
-    setShowModal(false)
-    setTimeout(() =>{
-      onClose()
-    },300)
-  }, [onClose, disabled])
+    if (disabled) {
+      return;
+    }
+  
+    setShowModal(false);
+    setTimeout(() => {
+      onClose();
+    }, 300)
+  }, [onClose, disabled]);
 
   const handleSubmit = useCallback(() => {
-    if(disabled){
-    return}
-    
-    onSubmit()
-  }, [onSubmit, disabled])
+    if (disabled) {
+      return;
+    }
+
+    onSubmit();
+  }, [onSubmit, disabled]);
 
   const handleSecondaryAction = useCallback(() => {
-    if(disabled || !secondaryAction) {
-      return
+    if (disabled || !secondaryAction) {
+      return;
     }
-    secondaryAction()
-    
-  }, [disabled, secondaryAction])
 
-  if(!isOpen) {
-    return null
+    secondaryAction();
+  }, [secondaryAction, disabled]);
+
+  if (!isOpen) {
+    return null;
   }
+
   return (
     <>
       <div
         className="
           justify-center 
-          items-center  
+          items-center 
+          flex 
           overflow-x-hidden 
           overflow-y-auto 
           fixed 
@@ -80,7 +95,6 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           h-full 
           lg:h-auto
           md:h-auto
-
           "
         >
           {/*content*/}
@@ -175,4 +189,4 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
   );
 }
 
-export default Modal
+export default Modal;

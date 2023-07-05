@@ -62,7 +62,7 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           overflow-x-hidden 
           overflow-y-auto 
           fixed 
-          inset-0 
+          
           z-50 
           outline-none 
           focus:outline-none
@@ -80,7 +80,6 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           h-full 
           lg:h-auto
           md:h-auto
-
           "
         >
           {/*content*/}

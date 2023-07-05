@@ -65,7 +65,7 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           inset-0 
           z-50 
           outline-none 
-          focus:outline-none
+          
           bg-neutral-800/70
         "
       >
@@ -80,7 +80,6 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           h-full 
           lg:h-auto
           md:h-auto
-
           "
         >
           {/*content*/}

@@ -58,8 +58,8 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
       <div
         className="
           justify-center 
-          items-center  
-          overflow-x-hidden 
+          items-center 
+          flex 
           overflow-y-auto 
           fixed 
           inset-0 
@@ -80,7 +80,6 @@ const Modal: React.FC<ModalInterfaceProps> = ({title,isOpen,disabled,onSubmit,on
           h-full 
           lg:h-auto
           md:h-auto
-
           "
         >
           {/*content*/}
