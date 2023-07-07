@@ -3,7 +3,7 @@
 import React from 'react'
 
 import {TbBeach, TbMountain, TbPool} from 'react-icons/tb'
-import {GiBoatFishing, GiCastle, GiIsland, GiWindmill} from 'react-icons/gi'
+import {GiBoatFishing, GiIsland, GiWindmill} from 'react-icons/gi'
 import {MdOutlineVilla} from 'react-icons/md'
 import {FaSkiing} from 'react-icons/fa'
 import CategoryBox from '../CategoryBox'
@@ -44,12 +44,7 @@ export const categories = [
     {
         label: 'Skiing',
         icon: FaSkiing,
-        description: 'This property has skiing activities!'
-    },
-    {
-        label: 'Castles',
-        icon: GiCastle,
-        description: 'This property is in a castle!'
+        description: 'This property is close to a lake!'
     }
 ]
 
