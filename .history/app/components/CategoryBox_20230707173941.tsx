@@ -43,9 +43,7 @@ const CategoryBox:React.FC<CategoryBoxProps> = ({
         router.push(url)
     }, [label, params, router])
   return (
-    <div 
-    onClick={handleClick}
-    className={`
+    <div className={`
     flex
     flex-col
     items-center

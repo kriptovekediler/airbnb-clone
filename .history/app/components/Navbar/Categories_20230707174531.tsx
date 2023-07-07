@@ -6,7 +6,7 @@ import {TbBeach} from 'react-icons/tb'
 import {GiWindmill} from 'react-icons/gi'
 import {MdOutlineVilla} from 'react-icons/md'
 import CategoryBox from '../CategoryBox'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 
 export const categories = [
     {
@@ -30,13 +30,6 @@ const Categories = () => {
     const params = useSearchParams()
     const category = params?.get('category')
 
-    const pathname = usePathname()
-
-    const isMainPage = pathname === '/'
-
-    if(!isMainPage) {
-        return null
-    }
 
   return (
     <div className='
@@ -48,7 +41,7 @@ const Categories = () => {
     overflow-x-auto
     '>
         {categories.map((item) =>(
-            <CategoryBox label= {item.label} selected={category == item.label} icon={item.icon}/>
+            <CategoryBox label= {item.label} selected={false} icon={item.icon}/>
         ))}
     </div>
   )

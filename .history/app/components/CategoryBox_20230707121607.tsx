@@ -35,17 +35,13 @@ const CategoryBox:React.FC<CategoryBoxProps> = ({
             delete updatedQuery.category
         }
 
-        const url = qs.stringifyUrl({
+        const url = qs.stringify({
             url: '/',
             query: updatedQuery
         }, {skipNull: true})
-
-        router.push(url)
-    }, [label, params, router])
+    }, [])
   return (
-    <div 
-    onClick={handleClick}
-    className={`
+    <div className={`
     flex
     flex-col
     items-center
