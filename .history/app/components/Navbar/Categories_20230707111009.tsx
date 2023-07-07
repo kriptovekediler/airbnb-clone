@@ -1,11 +1,9 @@
 'use client'
-
 import React from 'react'
 
 import {TbBeach} from 'react-icons/tb'
 import {GiWindmill} from 'react-icons/gi'
 import {MdOutlineVilla} from 'react-icons/md'
-import CategoryBox from '../CategoryBox'
 
 export const categories = [
     {
@@ -36,7 +34,7 @@ const Categories = () => {
     overflow-x-auto
     '>
         {categories.map((item) =>(
-            <CategoryBox label= {item.label} selected={false} icon={item.icon}/>
+            <CategoryBox/>
         ))}
     </div>
   )

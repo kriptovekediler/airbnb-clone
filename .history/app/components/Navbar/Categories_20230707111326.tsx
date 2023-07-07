@@ -36,7 +36,7 @@ const Categories = () => {
     overflow-x-auto
     '>
         {categories.map((item) =>(
-            <CategoryBox label= {item.label} selected={false} icon={item.icon}/>
+            <CategoryBox label= {item.label} selected icon={item.icon}/>
         ))}
     </div>
   )
