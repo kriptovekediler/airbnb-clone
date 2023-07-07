@@ -14,7 +14,7 @@ const Avatar:React.FC<AvatarProps> = ({currentUser}) => {
     height='30'
     width='30'
     alt='Avatar'
-    src={currentUser?.image!}
+    src={currentUser?.image}
     />
   ) : (
     <Image

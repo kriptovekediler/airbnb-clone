@@ -3,18 +3,17 @@ import React from 'react'
 import { SafeUser } from '../types'
 
 interface AvatarProps{
-  currentUser?: SafeUser | null | undefined
+  currentUser?: SafeUser | null
 }
 const Avatar:React.FC<AvatarProps> = ({currentUser}) => {
   return (
-    <>
-  {currentUser ? (
+  {currentUser.image ? (
     <Image
     className='rounded-full'
     height='30'
     width='30'
     alt='Avatar'
-    src={currentUser?.image!}
+    src='/images/placeholder.jpg'
     />
   ) : (
     <Image
@@ -25,7 +24,7 @@ const Avatar:React.FC<AvatarProps> = ({currentUser}) => {
     src='/images/placeholder.jpg'
     />
   )}
-   </>
+   
     
 )
 }
