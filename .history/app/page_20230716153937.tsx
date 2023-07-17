@@ -3,7 +3,6 @@ import getListings from "./actions/getListings";
 import ClientOnly from "./components/ClientOnly";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
-import ListingCard from "./components/listings/ListingCard";
 
 export default async function Home() {
   const listings = await getListings()
@@ -37,7 +36,6 @@ export default async function Home() {
           {listings.map((listing: any) => {
             return(
               <ListingCard
-              data={listing}
               key = {listing.id}
               currentUser = {currentUser}
               />
