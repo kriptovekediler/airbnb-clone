@@ -1,6 +1,6 @@
 import prisma from "@/app/libs/prismadb";
 
-export interface IListingParams {
+interface IListingParams {
   userId?: string;
 }
 
@@ -16,6 +16,7 @@ export default async function getListings(params: IListingParams) {
 
     const listings = await prisma.listing.findMany({
       where: query,
+
       orderBy: {
         createdAt: "desc",
       },

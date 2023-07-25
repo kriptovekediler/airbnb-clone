@@ -9,7 +9,7 @@ interface HomeProps {
   searchParams: IListingParams
 }
 const Home = async ({searchParams}: HomeProps) => {
-  const listings = await getListings(searchParams)
+  const listings = await getListings()
   const currentUser = await getCurrentUser()
   const isEmpty = false
 
@@ -51,5 +51,3 @@ const Home = async ({searchParams}: HomeProps) => {
     </ClientOnly>
   )
 }
-
-export default Home

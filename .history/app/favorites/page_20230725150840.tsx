@@ -1,0 +1,1 @@
+const FavoritesPage = async () => {}
